@@ -3,3 +3,4 @@ pandas == 1.2.4
 matplotlib == 3.3.4
 japanize-matplotlib == 1.1.3
 xlrd == 2.0.1
+openpyxl == 3.0.7
