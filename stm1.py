@@ -12,7 +12,7 @@ data_file = st.file_uploader('Upload data',type=['xlsx','csv'])
 #st.beta_set_page_config(layout='wide')
 
 if data_file is not None :
-    df = pd.read_excel(data_file,sheet_name='欠品データ')
+    df = pd.read_excel(data_file,sheet_name='欠品データ',engine='openpyxl')
 
 
 #df = pd.read_excel(r'C:\Users\kasei\Downloads\欠品チェック.xlsx',sheet_name='欠品データ')
