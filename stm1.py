@@ -3,8 +3,7 @@ import pandas as pd
 import os
 import matplotlib.pyplot as plt
 import japanize_matplotlib
-#ros.chdir('C:\Users\kasei\新しいフォルダー\st')
-#from streamlit-pandas_profiling import stProfile
+import xlrd
 
 st.title('欠品チェック app')
 
