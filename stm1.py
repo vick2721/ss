@@ -93,6 +93,7 @@ if data_file is not None :
 
     st.subheader('中分類円グラフ')
     st.pyplot(pie(df1_2))
+    st.set_option('deprecation.showPyplotGlobalUse', False)
 
     
     if st.checkbox('中分類分析:'):
