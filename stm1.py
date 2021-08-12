@@ -121,7 +121,7 @@ if data_file is not None :
         st.write('欠品数:',len(df5_1['中分類名']))
         
     if st.button('Download Dataframe as CSV'):
-        tmp_download_link = pd.to_csv(df5_1, 'YOUR_DF.csv', 'Click here to download your data!')
+        tmp_download_link = df5_1.to_csv('YOUR_DF.csv', 'Click here to download your data!')
         st.markdown(tmp_download_link, unsafe_allow_html=True)
 
 
