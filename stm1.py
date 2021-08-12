@@ -119,6 +119,10 @@ if data_file is not None :
         df5_1 = df_week.loc[week_select].head(100)
         st.dataframe(df5_1)
         st.write('欠品数:',len(df5_1['中分類名']))
+        
+    if st.button('Download Dataframe as CSV'):
+        tmp_download_link = pd.to_csv(df5_1, 'YOUR_DF.csv', 'Click here to download your data!')
+        st.markdown(tmp_download_link, unsafe_allow_html=True)
 
 
     if st.checkbox('欠品数割合比較:'):
