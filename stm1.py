@@ -117,10 +117,10 @@ if data_file is not None :
         week_select = st.selectbox('週発注回数:',week)
         df_week = df2_2.set_index('週発注回数')
         df5_1 = df_week.loc[week_select].head(100)
-        st.dataframe(df5_1)
+        dt = st.dataframe(df5_1)
         st.write('欠品数:',len(df5_1['中分類名']))
         if st.button('Download Dataframe as CSV'):
-            tmp_download_link = df5_1.to_csv('Result.csv')
+            tmp_download_link = dt.to_csv('Result.csv')
             st.markdown(tmp_download_link, unsafe_allow_html=True)
         
 
