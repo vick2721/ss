@@ -120,15 +120,15 @@ if data_file is not None :
         df5_1 = df_week.loc[week_select].head(100)
         dt = st.dataframe(df5_1)
         st.write('欠品数:',len(df5_1['中分類名']))
-    def get_table_download_link(df):
-        """Generates a link allowing the data in a given panda dataframe to be downloaded
-        in:  dataframe
-        out: href string
-        """
-        val = to_excel(dt)
-        b64 = base64.b64encode(val)  # val looks like b'...'
-        return f'<a href="data:application/octet-stream;base64,{b64.decode()}" download="extract.xlsx">Download csv file</a>' # decode b'abc' => abc'
-    st.markdown(get_table_download_link(df), unsafe_allow_html=True)
+   st.markdown(get_table_download_link(df), unsafe_allow_html=True)
+        def get_table_download_link(dt):
+            """Generates a link allowing the data in a given panda dataframe to be downloaded
+            in:  dataframe
+            out: href string
+            """
+            csv = dt.to_csv(index=False)
+            b64 = base64.b64encode(csv.encode()).decode()  # some strings <-> bytes conversions necessary here
+            href = f'<a href="data:file/csv;base64,{b64}">Download csv file</a>'
 
     if st.checkbox('欠品数割合比較:'):
         row1, row2 = st.beta_columns(2)
