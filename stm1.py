@@ -129,6 +129,8 @@ if data_file is not None :
             href = f'<a href="data:file/csv;base64,{b64}" download="{new_filename}">Click Here!!</a>'
             
             st.markdown(href,unsafe_allow_html=True)
+        st.write(csv_downloader(dt))
+        
         
      
     #def get_table_download_link(df):
