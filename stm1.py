@@ -123,7 +123,7 @@ if data_file is not None :
         
      
     def get_table_download_link(dt):
-        csv = dt.to_csv()
+        csv = dt.to_excel()
         b64 = base64.b64encode(csv.encode()).decode()  # some strings <-> bytes conversions necessary here
         href = f'<a href="data:file/csv;base64,{b64}">Download csv file</a>'
         
