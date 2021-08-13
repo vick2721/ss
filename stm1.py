@@ -124,9 +124,10 @@ if data_file is not None :
         def csv_downloader(dt):
             csvfile = dt.to_csv()
             b64 = base64.b64encode(csvfile.encode()).decode()
-            new_filename = "new_text_file_{}_.csv".format(timestr)
+            new_filename = "new_text_file.csv")
             st.markdown("#### Download File ###")
             href = f'<a href="data:file/csv;base64,{b64}" download="{new_filename}">Click Here!!</a>'
+            
             st.markdown(href,unsafe_allow_html=True)
         
      
@@ -162,3 +163,11 @@ if data_file is not None :
             st.set_option('deprecation.showPyplotGlobalUse', False)
             st.write('総欠品数:',len(df2_4['中分類']))
             st.write(df4_3)
+    def csv_downloader(dt):
+            csvfile = dt.to_csv()
+            b64 = base64.b64encode(csvfile.encode()).decode()
+            new_filename = "new_text_file.csv")
+            st.markdown("#### Download File ###")
+            href = f'<a href="data:file/csv;base64,{b64}" download="{new_filename}">Click Here!!</a>'
+            
+            st.markdown(href,unsafe_allow_html=True)
