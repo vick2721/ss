@@ -120,8 +120,9 @@ if data_file is not None :
         dt = st.dataframe(df5_1)
         st.write('欠品数:',len(df5_1['中分類名']))
         if st.button('Download Dataframe as CSV'):
-            tmp_download_link = dt.to_csv('Result.csv')
-            st.markdown(tmp_download_link, unsafe_allow_html=True)
+            csv = df5_1.to_csv(index=False)
+            b64 = base64.b64encode(csv.encode()).decode()  # some strings <-> bytes conversions necessary here
+            href = f'<a href="data:file/csv;base64,{b64}">Download csv file</a>'
         
 
     if st.checkbox('欠品数割合比較:'):
