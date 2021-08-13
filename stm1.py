@@ -127,8 +127,7 @@ if data_file is not None :
         """
         val = to_excel(dt)
         b64 = base64.b64encode(val)  # val looks like b'...'
-        return f'<a href="data:application/octet-stream;base64,{b64.decode()}" download="extract.xlsx">Download csv file</a>' # decode b'abc' => abc
-'
+        return f'<a href="data:application/octet-stream;base64,{b64.decode()}" download="extract.xlsx">Download csv file</a>' # decode b'abc' => abc'
     st.markdown(get_table_download_link(df), unsafe_allow_html=True)
 
     if st.checkbox('欠品数割合比較:'):
