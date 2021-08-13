@@ -122,16 +122,13 @@ if data_file is not None :
         st.write('欠品数:',len(df5_1['中分類名']))
         
      
-     def get_table_download_link(dt):
-        """Generates a link allowing the data in a given panda dataframe to be downloaded
-        in:  dataframe
-        out: href string
-        """
-        csv = dt.to_csv(index=False)
-        b64 = base64.b64encode(csv.encode()).decode()  # some strings <-> bytes conversions necessary here
-        href = f'<a href="data:file/csv;base64,{b64}">Download csv file</a>'
+     def get_table_download_link(df):
+            csv = df.to_csv(index=False)
+            b64 = base64.b64encode(csv.encode()).decode()  # some strings <-> bytes conversions necessary here
+            href = f'<a href="data:file/csv;base64,{b64}">Download csv file</a>'
         
-        return href
+            return href
+    
     st.markdown(get_table_download_link(dt),unsafe_allow_html=True):
         
     if st.checkbox('欠品数割合比較:'):
