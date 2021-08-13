@@ -129,7 +129,7 @@ if data_file is not None :
         
         return href
     
-    st.markdown(get_table_download_link(dt),unsafe_allow_html=True):
+    st.markdown(get_table_download_link(dt),unsafe_allow_html=True)
         
     if st.checkbox('欠品数割合比較:'):
         row1, row2 = st.beta_columns(2)
