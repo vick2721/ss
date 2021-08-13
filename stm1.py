@@ -121,13 +121,13 @@ if data_file is not None :
         dt = st.dataframe(df5_1)
         st.write('欠品数:',len(df5_1['中分類名']))
         
-    def csv_downloader(dt):
-        csvfile = dt.to_csv()
-        b64 = base64.b64encode(csvfile.encode()).decode()
-        new_filename = "new_text_file_{}_.csv".format(timestr)
-        st.markdown("#### Download File ###")
-        href = f'<a href="data:file/csv;base64,{b64}" download="{new_filename}">Click Here!!</a>'
-        st.markdown(href,unsafe_allow_html=True)
+        def csv_downloader(dt):
+            csvfile = dt.to_csv()
+            b64 = base64.b64encode(csvfile.encode()).decode()
+            new_filename = "new_text_file_{}_.csv".format(timestr)
+            st.markdown("#### Download File ###")
+            href = f'<a href="data:file/csv;base64,{b64}" download="{new_filename}">Click Here!!</a>'
+            st.markdown(href,unsafe_allow_html=True)
         
      
     #def get_table_download_link(df):
