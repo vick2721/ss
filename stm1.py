@@ -120,7 +120,7 @@ if data_file is not None :
         df5_1 = df_week.loc[week_select].head(100)
         dt = st.dataframe(df5_1)
         st.write('欠品数:',len(df5_1['中分類名']))
-        if st.st.button('Download Dataframe as CSV'):
+        if st.button('Download Dataframe as CSV'):
             def get_table_download_link(dt):
                 """Generates a link allowing the data in a given panda dataframe to be downloaded
                 in:  dataframe
