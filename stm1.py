@@ -30,7 +30,11 @@ st.write("評估指標:")
 st.write("R-squared:", reg.score(X_test, y_test))
 
 # 允許用戶上傳自己的數據
-uploaded_file = st.file_uploader("上傳您
+uploaded_file = st.file_uploader("Upload your data:", type=["csv"])
+if uploaded_file is not None:
+    data = pd.read_csv(uploaded_file)
+    # do something with the data
+
 uploaded_file = st.file_uploader("上傳您的數據:", type=["csv"])
 if uploaded_file is not None:
     data = pd.read_csv(uploaded_file)
