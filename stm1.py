@@ -12,8 +12,10 @@ model_select = st.selectbox("選擇模型:", ["線性回歸", "決策樹", "隨�
 # 訓練所選模型
 if model_select == "線性回歸":
     reg = LinearRegression().fit(X_train, y_train)
-elif model_select == "決策樹":streamlit hello
+elif model_select == "決策樹":
+    from sklearn.tree import DecisionTreeRegressor
     reg = DecisionTreeRegressor().fit(X_train, y_train)
+    
 else:
     reg = RandomForestRegressor().fit(X_train, y_train)
 
