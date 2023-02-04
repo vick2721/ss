@@ -1,6 +1,6 @@
 import streamlit as st
 import requests
-from ba4 import BeautifulSoup
+from bs4 import BeautifulSoup
 import pandas as pd
 import numpy as np
 from sklearn.liner_model import LinearRegression
